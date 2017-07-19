@@ -36,9 +36,9 @@ public class VocaBuild extends JPanel
             question.setPreferredSize(new Dimension(177, 120));
             
             //Set up the picture label.
-            picture = new JLabel(createImageIcon("images/"
-                                             + "bird"
-                                             + ".gif"));
+            picture = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                             + picNames[0]
+                                             + ".gif"))));
             picture.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -111,22 +111,14 @@ public class VocaBuild extends JPanel
                     Random rand = new Random();
                     String picName = picNames[rand.nextInt(picNames.length)];
                     picture.setVisible(true);
-                    picture.setIcon(createImageIcon("images/"
+                    ImageIcon iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
                                              + picName
-                                             + ".gif"));
+                                             + ".gif")));
+                    picture.setIcon(iic);
             }
         }
 
-        /** Returns an ImageIcon, or null if the path was invalid. */
-        protected static ImageIcon createImageIcon(String path) {
-            java.net.URL imgURL = VocaBuild.class.getResource(path);
-            if (imgURL != null) {
-                return new ImageIcon(imgURL);
-            } else {
-                System.err.println("Couldn't find file: " + path);
-                return null;
-            }
-        }
+
 
         /**
          * Create the GUI and show it.  For thread safety,
