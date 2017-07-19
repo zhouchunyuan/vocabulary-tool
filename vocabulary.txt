@@ -1,0 +1,408 @@
+accept=v.=接受，同意，承担（责任等）
+accident=n.=事故，意外的事
+across=prep.=横过，穿过
+active=a.=积极的，活跃的，勤奋的
+address=n.=地址
+afraid=a.=害怕的，担心的
+allow=v.=允许，准许
+among=prep.=在......中间，在（三个以上）之间
+angry=a.=生气的，愤怒的
+answer=v.=回答
+animal=n.=动物
+appear=v.=出现
+arrive=v.=到达，达到
+art=n.=艺术，美术，技艺
+asleep=a.=睡着的，熟睡
+autumn=n.=秋天，秋季
+banana=n.=香蕉
+bank=n.=（河、海、湖的）岸，堤
+barber=n.=理发师
+basket=n.=篮子
+beach=n.=海滨，海滩
+beat=v.=敲打，跳动，打（音乐）节拍
+beautiful=a.=美的，美丽的，美观的
+because=conj.=因为
+become=v.=变得，成为
+beef=n.=牛肉
+believe=v.=相信，认为
+beside=prep.=在......旁边，靠近
+bird=n.=鸟
+blackboard=n.=黑板
+blind=a.=瞎的
+blow=v.=吹，刮风，吹气
+blue=n.=蓝色=a.=蓝色的
+boat=n.=小船，小舟
+boring=a.=乏味的，无聊的
+bowl=n.=碗
+breathe=v.=呼吸
+bridge=n.=桥
+bright=a.=明亮的，聪明的
+brown=n.=棕色=a.=棕色的
+building=n.=建筑物，房屋，大楼
+butter=n.=黄油，奶油
+cake=n.=蛋糕，糕点，饼
+camera=n.=照相机，摄相机
+Canada=n.=加拿大
+cancer=n.=癌
+capital=n.=首都，省会，大写，资本
+catch=v.=赶上，染上（疾病）
+cause=n.=原因，起因
+centre（美center）=n.=中心，中央
+century=n.=世纪，百年
+certain=a.=一定的=pron.=某几个，某些
+chance=n.=机会，可能性
+check=n.=检查，批改=v.=校对，核对，检查，批改
+cheese=n.=奶酪
+chess=n.=棋
+clever=a.=聪明的，伶俐的
+climb=v.=爬，攀登
+club=n.=俱乐部，纸牌中的梅花
+clumsy=a.=笨拙的
+coin=n.=硬币
+collect=v.=收集，搜集
+college=n.=大学
+comfortable=a.=舒服的，安逸的
+company=n.=公司
+concert=n.=音乐会，演奏会
+cough=n.&v.=咳嗽
+country=n.=国家，农村，乡下
+course=n.=课程
+cover=n.=盖子，罩，封面=v.=覆盖，遮盖，掩盖
+cross=vt.=越过，穿过
+dance=v.&n.=跳舞
+danger=n.=危险
+dangerous=a.=危险的
+deep=a.=深=ad.=深，深厚
+delicious=a.=美味的，可口的
+describe=vt.=描写，叙述
+develop=v.=（使）发展，开发=vt.=冲洗（照片）
+dictionary=n.=词典，字典
+difference=n.=不同
+dinner=n.=正餐，宴会
+discover=vt.=发现
+doctor=n.=医生，大夫，博士
+drop=n.=滴=v.=投递，放弃
+duty=n.=责任，义务
+earth=n.=地球，土，泥，大地
+education=n.=教育，培养
+egg=n.=蛋，卵
+elephant=n.=象
+empty=a.=空的
+encourage=v.=鼓励
+engineer=n.=工程师
+enjoy=v.=欣赏，享受......之乐趣，喜欢
+especially=ad.=特别，尤其
+excellent=a.=极好的，优秀的
+expensive=a.=昂贵的
+experience=n.=经验，经历
+explain=v.=解释，说明
+fact=n.=事实，现实
+farm=n.=农场，农庄
+favourite（美favorite）=a.=喜爱的
+feed=v.=喂养，饲养
+festival=n.=节日
+film=n.=电影，影片，胶卷
+final=a.=最后的，终极的
+finger=n.=手指
+finish=v.=结束，完成
+fire=n.=火，火炉，火灾
+fix=vt.=修理，安装，确定，决定
+food=n.=食物，食品
+fox=n.=狐狸
+fridge(refrigerator)=n.=冰箱
+friendship=n.=友谊，友情
+funny=a.=有趣的，滑稽可笑的
+geography=n.=地理学
+grade=n.=等级，年级，成绩
+grass=n.=草，草场，牧草
+grow=v.=成长，种植，变成
+hair=n.=头发
+hall=n.=大厅，会堂，礼堂，过道
+happen=v.=（偶然）发生
+hate=v.=恨，讨厌
+health=n.=健康，卫生
+heavy=a.=重的
+height=n.=高，高度
+helpful=a.=有帮助的，有益的
+hill=n.=小山
+history=n.=历史
+hobby=n.=业余爱好，嗜好
+holidy=n.=假日，假期
+hometown=n.=故乡
+honest=a.=诚实的，正直的
+hope=n.&v.=希望
+hospital=n.=医院
+huge=a.=巨大的，庞大的
+hungry=a.=饥饿的
+hurry=v.=赶快，急忙
+hurt=v.=伤害，受伤
+imagine=v.=想像，设想
+important=a.=重要的
+impossible=a.=不可能的
+improve=v.=改进，更新
+increase=v.&n.=增加
+information=n.=信息
+interest=n.=兴趣，趣味，利息
+invention=n.=发明，创造
+invite=v.=邀请，招待
+island=n.=岛
+jacket=n.=短上衣，夹克
+joke=n.&v.=笑话
+jump=v.=跳跃，猛扑
+keep=v.=保持，保存
+key=n.=钥匙，答案
+kilometre=n.=千米（公里）
+kitchen=n.=厨房
+kite=n.=风筝
+knee=n.=膝盖
+know=v.=知道，了解，懂得
+knowledge=n.=知识，学问
+lab(laboratory)=n.=实验室
+lake=n.=湖
+language=n.=语言
+large=a.=大的，巨大的
+laugh=n.&v.=笑，大笑，嘲笑
+lazy=a.=懒惰的
+leader=n.=领袖，领导人
+leaf(pl.leaves)=n.=（树，菜）叶
+leave=v.=离开，把......留下
+lesson=n.=课，教训
+letter=n.=信，字母
+library=n.=图书馆，图书室
+lift=v.=举起，抬起
+light=n.=光，光亮，灯，灯光=v.=点（火），点燃=a.=明亮的，轻的，浅色的
+line=n.=绳索，线，排，行，线路
+lion=n.=狮子
+list=n.&v.=一览表，清单，列举
+litter=v.&n.=乱丢杂物
+live=v.=生活，居住，活着
+lock=n.&v.=锁，锁上
+lonely=a.=孤独的，寂寞的
+lose=v.=失去，丢失
+loud=a.=大声的
+lovely=a.=可爱的，令人愉快的
+luck=n.=运气，好运
+machine=n.=机器
+magazine=n.=杂志
+make=v.=制造，做，使得
+market=n.=市场，集市
+marry=v.=（使）成婚，结婚
+math(s)(mathematics)=n.=数学
+matter=n.=事情，问题，物质=v.=要紧，有关系
+maybe=ad.=可能，大概
+medicine=n.=药
+meeting=n.=会，汇合点
+memory=n.=回忆，记忆
+menu=n.=菜单
+message=n.=消息
+model=n.=模型，范例，模范
+monitor=n.=班长
+moon=n.=月亮
+mountain=n.=山
+mouse(pl. mice)=n.=鼠，鼠标
+museum=n.=博物馆
+music=n.=音乐
+natural=a.=自然的
+necessary=a.=必需的，必要的
+neighbour(美neighbor)=n.=邻居
+nervous=a.=紧张不安的
+noodle=n.=面条
+notice=n.=布告，通告，注意=v.=注意，注意到
+nurse=n.=护士
+official=a.=官方的
+ocean=n.=海洋
+only=a.=唯一的，仅有的
+panda=n.=熊猫
+passage=n.=通道，走廊，一段文章
+patient=n.=病人
+pay=v.=付款=n.=报酬
+pet=n.=宠物
+piano=n.=钢琴
+pig=n.=猪
+pink=n.=粉红色=a.=粉红色的
+pity=n.=怜悯，同情
+plan=n.&v.=计划，打算
+plane=n.=飞机
+playground=n.=操场，运动场
+pleasant=a.=令人愉快的
+police=n.=警察，警务人员
+policeman(policewoman)=n.=警察（女警察）
+polite=a.=有礼貌的，有教养的
+pool=n.=水塘，水池
+poor=a.=贫穷的，可怜的，差的
+popular=a.=流行的，受欢迎的
+population=n.=人口，人数
+possible=a.=可能的
+post=v.=投寄，邮寄
+postcard=n.=明信片
+potato=n.=土豆，马铃薯
+practise（美practice）=v.=练习，实践
+present=n.=礼物，赠品
+pretty=a.=漂亮的，俊俏的
+price=n.=价格，价钱
+prize=n.=奖赏，奖品
+problem=n.=问题，难题
+programme（美program）=n.=节目，项目
+proud=a.=自豪的，骄傲的
+pyramid=n.=金字塔
+question=n.=问题
+raincoat=n.=雨衣
+reason=n.=理由，原因
+refuse=v.=拒绝，不愿
+relax=v.=（使）放松，轻松
+repair=n.&v.=修理，修补
+reply=n.&v.=回答，答复
+restaurant=n.=饭馆，饭店
+return=v.=归还，返回
+rich=a.=富裕的，有钱的
+riddle=n.=谜语
+river=n.=江，河
+road=n.=道路
+rule=n.=规则=v.=统治，支配
+safe=a.=安全的=n.=保险柜
+science=n.=科学
+season=n.=季节
+secret=n.=秘密
+serious=a.=严肃的，严重的，认真的
+serve=v.=招待（顾客等），服务
+shape=n.=形状，外形
+shelf(pl. shelves)=n.=架子，搁板，格层
+should=modal v.=应该，会
+shower=n.=阵雨，淋浴
+shy=a.=害羞的
+silk=n.=（蚕）丝，纺织品
+size=n.=尺寸，大小
+skate=v.=溜冰，滑冰
+sleep=v.&n.=睡觉
+smile=n.&v.=微笑
+snake=n.=蛇
+socks=n.=短袜
+soup=n.=汤
+space=n.=空间
+speed=n.=速度=v.=（使）加速
+spell=v.=拼写
+spoon=n.=匙，调羹
+square=n.=广场
+stamp=n.=邮票
+stay=v.=停留，保持
+step=n.&v.=走，跨步
+story=n.=故事，小说
+strange=a.=奇怪的，奇特的，陌生的
+street=n.=街，街道
+subject=n.=题目，主题，学科
+success=n.=成功
+suddenly=adv.=突然地
+suppose=v.=猜想，假定，料想
+sure=a.&adv.=确信，肯定
+surprise=n.&v.=惊奇，使惊奇
+sweep(swept,swept)=v.=扫除，扫
+table=n.=桌子，表格
+taste=n.=品尝，尝味，味道
+temperature=n.=温度
+thirsty=a.=渴
+thought=n.=思考，思想，念头
+ticket=n.=票，卷
+tiger=n.=老虎
+tomato=n.=西红柿，番茄
+tour=n.=旅行，观光
+tourist=n.=旅行者，观光者
+town=n.=城镇，城
+traffic=n.=交通，来往车辆
+travel=v.&n.=旅行
+tree=n.=树
+trip=n.=旅行，旅程
+truth=n.=真相，事实，实情
+T-shirt=n.=体恤衫
+umbrella=a.=雨伞
+understand=v.=明白，理解
+university=n.=大学
+vegetable=n.=蔬菜
+watch=n.=手表=v.=观看，当心
+weekday=n.=平日
+weekend=n.=周末
+west=n.=西部，西方
+western=a.=西方的，西部的
+wet=a.=湿的，潮的，多雨的
+what=pron.=什么，怎么样=a.=多么，何等，什么
+whenever=conj.=无论何时，每当
+whether=conj.=是否
+while=conj.=在......时候，和......同时=n.=一会儿，一段时间
+white=a.=白色的=n.=白色
+wide=a.=宽阔的
+wife=n.=妻子
+will(would)=modal v.=将，会（表示将来），愿意，要
+win=v.=获胜，赢得
+wind=n.=风
+window=n.=窗户，计算机的窗口
+windy=a.=有风的，多风的
+wine=n.=酒
+winner=n.=胜利者，优胜者，获胜的事物
+winter=n.=冬天，冬季
+wish=n.&v.=愿望，祝愿
+with=prep.=关于，带有，以，和，用，有
+without=prep.=没有
+woman(pl. women)=n.=妇女，女人
+wonder=v.=对......疑惑，感到惊奇，想知道
+wonderful=a.=美妙的，精彩的
+wood=n.=木头，木材
+worker=n.=工人，工作者
+worry=v.=担忧，发怒，困扰
+would=modal v.=（will的过去时）将会，打算
+write=v.=写作
+wrong=a.=错误的
+yard=n.=码，院子，场地
+year=n.=年
+yellow=a.=黄色的=n.=黄色
+yes=adv.=是，好，同意
+yesterday=n&adv.=昨天
+yet=adv.=尚，还，仍然
+zero=n.=零，零度
+zoo=n.=动物园
+a few=一些，少量
+a kind of=一种，一类
+a little=一点，少许
+a lot of(lots of)=许多，大量
+a pair of=一双，一副
+a piece of=一块，一张，一片
+according to=按照，根据
+agree to do sth.=同意做某事
+agree with sb.=同意某人的看法
+all kinds of=各种各样的
+and so on=等等
+arrive at(in) place=到达某地
+as soon as=一......就......
+as...as=像，如同
+be able to do sth.=能够（有能力）做某事
+be afraid of=害怕
+be angry with=生某人的气
+be different from=与......不同
+be interested in=对......感兴趣
+catch a cold=得感冒
+change into=转换成，把......变成
+fall ill=患病，病倒
+far away=遥远的
+hold on=等一等（别挂电话）
+keep doing sth.=继续做某事
+laugh at=嘲笑
+look for=寻找
+make a face(faces)=做鬼脸，做苦脸
+make a mistake=犯错误
+pay for=付款
+run away=逃跑，跑开
+save one's life=挽救某人生命
+send up=发出，射出
+take off=脱下，起飞
+take part in=参加
+take place=发生
+talk about=谈论，议论
+the day after tomorrow=后天
+the day before yesterday=前天
+the more...the more=越......就越......
+think of=想起，考虑，认为
+try on=试穿，试试看
+turn down=关小，调低
+be/get used to(do) sth.=习惯于（做）某事
+used to do sth.=过去常常做某事
+wake up=醒来
+work out=算出，解决
+worry about=为......担心
