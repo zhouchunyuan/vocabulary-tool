@@ -20,6 +20,7 @@ import java.nio.file.Path;
 import java.io.IOException;
 import java.util.*;
 import java.util.Random;
+import java.lang.Thread.*;
 
 
 public class VocaBuild extends JPanel
@@ -55,11 +56,12 @@ public class VocaBuild extends JPanel
                 public void mouseClicked(MouseEvent e) {
                     if (goodanswer) {
                         fillwords();
-                        goodanswer=false;
+
                     }
                 }
 
-            });
+            }
+                                    );
             progress = new JLabel("number",SwingConstants.LEFT);
             //The preferred size is hard-coded to be the width of the
             //widest image and the height of the tallest image.
@@ -87,13 +89,15 @@ public class VocaBuild extends JPanel
             fillwords();
         }
         private void fillwords() {
-            //picture.setVisible(false);
+            goodanswer=false;
             trytimes = 0;//mark as not tried
             group.clearSelection();
             Random rand = new Random();
             int listlen = wordlist.size();
-            do{ currentWordIndex = rand.nextInt(listlen);}while(finishlist.contains(currentWordIndex));
-            
+            do {
+                currentWordIndex = rand.nextInt(listlen);
+            } while (finishlist.contains(currentWordIndex));
+
             String [] s = wordlist.get(currentWordIndex).split("=");
             question.setText(s[0]);
             //question.setSize(new Dimension(22*s[0].length(), 120) );
@@ -137,17 +141,32 @@ public class VocaBuild extends JPanel
                 Random rand = new Random();
                 picName = picNames[rand.nextInt(picNames.length-1)+1];
                 goodanswer = true;
-                if (trytimes==0)finishlist.add(currentWordIndex);
+                if (trytimes==0) {
+                    finishlist.add(currentWordIndex);
+                }
             } else {
                 picName = picNames[0];
                 goodanswer = false;
                 writefile(wordlist.get(currentWordIndex)+"\r\n");
+
+                trytimes++;
+
             }
             iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
                                 + picName
                                 + ".gif")));
             picture.setIcon(iic);
-            trytimes++;
+
+            if (trytimes==0) {
+                update(getGraphics());
+
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException ie) {
+                    //Handle exception
+                }
+                fillwords();//if success in 1st try, jump to next question
+            }
         }
 
 
@@ -249,18 +268,7 @@ public class VocaBuild extends JPanel
                 }
             }
         }
-        private static void writefinishlist() {
-            int [] a = {1,2046,3,5,6,7};
-            try {
-                FileOutputStream file = new FileOutputStream(finishlistfile);
-                //for (int i = 0; i < finishlist.size(); i++)  file.write(finishlist.get(i));
-                for (int i = 0; i < a.length; i++)  file.write(a[i]);
-                file.close();
-            } catch (IOException e) {
-                System.out.println("Error - " + e.toString());
-            }
 
-        }
         public static void main(String[] args) {
             //Schedule a job for the event-dispatching thread:
             //creating and showing this application's GUI.
