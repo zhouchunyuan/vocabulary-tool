@@ -25,6 +25,12 @@ import java.lang.Thread.*;
 
 public class VocaBuild extends JPanel
             implements ActionListener {
+                    
+        static final int FPS = 30;
+        static long delay = (long)(1000/FPS);
+        static long period = delay;
+        static int count = 150;
+        
         JLabel question,picture,progress;
         JRadioButton[] buttons;
         int currentWordIndex;
@@ -51,6 +57,8 @@ public class VocaBuild extends JPanel
             picture = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
                                                + picNames[0]
                                                + ".gif"))));
+            picture.setHorizontalTextPosition(JLabel.CENTER);
+            picture.setFont ( picture.getFont ().deriveFont (16.0f));
             picture.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -87,8 +95,30 @@ public class VocaBuild extends JPanel
             setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
             fillwords();
+            
+            java.util.Timer timer = new java.util.Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    int flag = count;
+                    if(count>0){
+                        picture.setText(""+count);
+                        count--;
+                        if(flag>0 && count==0){//do it only once
+                                picture.setText("New Word!");
+                                picture.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                        + "questionfail"
+                                        + ".gif"))));
+                                writefile(wordlist.get(currentWordIndex)+"\r\n");
+                        }
+                    }
+                }
+            }
+            , delay, period);
         }
         private void fillwords() {
+            if(finishlist.size()<wordlist.size()){
+            count = 150;
             goodanswer=false;
             trytimes = 0;//mark as not tried
             group.clearSelection();
@@ -130,6 +160,39 @@ public class VocaBuild extends JPanel
             picture.setIcon(iic);
             int remain = wordlist.size()-finishlist.size();
             progress.setText("还有"+remain+"个，共有"+wordlist.size()+"个");
+            }else{
+                    progress.setText("congratulations! all finished :)");
+            }
+        }
+        
+        private void doanimation(String typename){
+                count = 0; //freeze counter
+                String [] picnames = {};
+                String [] NG_group = {"NG0","NG1","NG2","NG0","NG2","NG1","NG0"};
+                String [] good_group = {"thumb0","thumb2","thumb4","thumb2","thumb0","thumb2","thumb4"};
+                if(typename.equals("NG")){
+                        picnames = new String[NG_group.length];
+                        System.arraycopy(NG_group,0,picnames,0,NG_group.length);
+                }
+                if(typename.equals("good")){
+                        picnames = new String[good_group.length];
+                        System.arraycopy(good_group,0,picnames,0,good_group.length);
+                }
+                
+                for(int i=0;i<picnames.length;i++){
+                        String s = picnames[i];
+                ImageIcon iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                + s
+                                + ".gif")));
+                picture.setIcon(iic); 
+                picture.setText("");
+                update(getGraphics());  
+                try {
+                    Thread.sleep(150);
+                } catch (InterruptedException ie) {
+                    //Handle exception
+                }                
+                }
         }
         /** Listens to the radio buttons. */
         public void actionPerformed(ActionEvent e) {
@@ -141,10 +204,12 @@ public class VocaBuild extends JPanel
                 Random rand = new Random();
                 picName = picNames[rand.nextInt(picNames.length-1)+1];
                 goodanswer = true;
+                doanimation("good");
                 if (trytimes==0) {
                     finishlist.add(currentWordIndex);
                 }
             } else {
+                doanimation("NG");
                 picName = picNames[0];
                 goodanswer = false;
                 writefile(wordlist.get(currentWordIndex)+"\r\n");
@@ -156,15 +221,9 @@ public class VocaBuild extends JPanel
                                 + picName
                                 + ".gif")));
             picture.setIcon(iic);
+            picture.setText("?");
 
             if (trytimes==0) {
-                update(getGraphics());
-
-                try {
-                    Thread.sleep(200);
-                } catch (InterruptedException ie) {
-                    //Handle exception
-                }
                 fillwords();//if success in 1st try, jump to next question
             }
         }
@@ -196,6 +255,8 @@ public class VocaBuild extends JPanel
             //Display the window.
             frame.pack();
             frame.setVisible(true);
+            
+
         }
 
         private java.util.List<String> wordlist = new ArrayList<String>();//to store words
