@@ -40,6 +40,7 @@ public class VocaBuild extends JPanel
         ButtonGroup group = new ButtonGroup();
         String [] picNames ={"question","Bird","Cat","Dog","Rabbit","Pig"};
         static String finishlistfile="finished.dat";
+        static String newwordsfile="newwords.txt";
 
         public VocaBuild() {
             super(new BorderLayout());
@@ -109,7 +110,7 @@ public class VocaBuild extends JPanel
                                 picture.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
                                         + "questionfail"
                                         + ".gif"))));
-                                writefile(wordlist.get(currentWordIndex)+"\r\n");
+                                writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
                         }
                     }
                 }
@@ -212,7 +213,7 @@ public class VocaBuild extends JPanel
                 doanimation("NG");
                 picName = picNames[0];
                 goodanswer = false;
-                writefile(wordlist.get(currentWordIndex)+"\r\n");
+                writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
 
                 trytimes++;
 
@@ -260,6 +261,7 @@ public class VocaBuild extends JPanel
         }
 
         private java.util.List<String> wordlist = new ArrayList<String>();//to store words
+        private java.util.List<String> newwordlist = new ArrayList<String>();//new word list, to avoid multiple items added
         private static java.util.List<Integer> finishlist = new ArrayList<Integer>();
         private void readfile() {
             String line = null;
@@ -276,13 +278,27 @@ public class VocaBuild extends JPanel
             }
 
             readDataFile();
-
+            readnewwordfile();
         }
-        private void writefile(String s) {
+        private void readnewwordfile() {
+            String line = null;
+            try (BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(newwordsfile)))){
+                while ((line = input.readLine()) != null) {
+                    newwordlist.add(line);
+                    //System.out.println(line);
+                }
+
+            } catch (Exception ex) {
+                System.err.format("IOException: %s%n", ex);
+            }
+        }
+        private void writenewwordfile(String s) {
+            if(newwordlist.contains(s))return;
             Charset charset = Charset.forName("GB2312");
             try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                            new FileOutputStream("newwords.txt", true), "GB2312"))) {
+                            new FileOutputStream(newwordsfile, true), "GB2312"))) {
                 writer.write(s, 0, s.length());
+                newwordlist.add(s);
             } catch (IOException x) {
                 System.err.format("IOException: %s%n", x);
             }
