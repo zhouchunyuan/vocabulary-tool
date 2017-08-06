@@ -25,12 +25,12 @@ import java.lang.Thread.*;
 
 public class VocaBuild extends JPanel
             implements ActionListener {
-                    
+        
         static final int FPS = 30;
         static long delay = (long)(1000/FPS);
         static long period = delay;
         static int count = 150;
-        
+
         JLabel question,picture,progress;
         JRadioButton[] buttons;
         int currentWordIndex;
@@ -96,21 +96,21 @@ public class VocaBuild extends JPanel
             setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
             fillwords();
-            
+
             java.util.Timer timer = new java.util.Timer();
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     int flag = count;
-                    if(count>0){
+                    if (count>0) {
                         picture.setText(""+count);
                         count--;
-                        if(flag>0 && count==0){//do it only once
-                                picture.setText("New Word!");
-                                picture.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
-                                        + "questionfail"
-                                        + ".gif"))));
-                                writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
+                        if (flag>0 && count==0) {//do it only once
+                            picture.setText("New Word!");
+                            picture.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                                          + "questionfail"
+                                                          + ".gif"))));
+                            writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
                         }
                     }
                 }
@@ -118,115 +118,131 @@ public class VocaBuild extends JPanel
             , delay, period);
         }
         private void fillwords() {
-            if(finishlist.size()<wordlist.size()){
-            count = 150;
-            goodanswer=false;
-            trytimes = 0;//mark as not tried
-            group.clearSelection();
-            Random rand = new Random();
-            int listlen = wordlist.size();
-            do {
-                currentWordIndex = rand.nextInt(listlen);
-            } while (finishlist.contains(currentWordIndex));
+            if (finishlist.size()<wordlist.size()) {
+                count = 150;
+                goodanswer=false;
+                trytimes = 0;//mark as not tried
+                group.clearSelection();
+                Random rand = new Random();
+                int listlen = wordlist.size();
+                do {
+                    currentWordIndex = rand.nextInt(listlen);
+                } while (finishlist.contains(currentWordIndex));
 
-            String [] s = wordlist.get(currentWordIndex).split("=");
-            question.setText(s[0]);
-            //question.setSize(new Dimension(22*s[0].length(), 120) );
-            //this.revalidate();
-            //this.repaint();
-            int buttonlen = buttons.length;
-            int pos = rand.nextInt(buttonlen);
+                String [] s = wordlist.get(currentWordIndex).split("=");
+                question.setText(s[0]);
+                //question.setSize(new Dimension(22*s[0].length(), 120) );
+                //this.revalidate();
+                //this.repaint();
+                int buttonlen = buttons.length;
+                int pos = rand.nextInt(buttonlen);
 
-            for (int i=0;i<buttons.length;i++) {
-                String explanition = "";
-                String [] ss;
-                int idx;
-                if (i==pos) {
-                    ss = s;
-                    idx = currentWordIndex;
-                } else {
-                    idx = currentWordIndex+i-pos;
-                    if (idx<0)idx=listlen+idx;
-                    if (idx>=listlen)idx=idx-listlen;
-                    ss = wordlist.get(idx).split("=");
+                for (int i=0;i<buttons.length;i++) {
+                    String explanition = "";
+                    String [] ss;
+                    int idx;
+                    if (i==pos) {
+                        ss = s;
+                        idx = currentWordIndex;
+                    } else {
+                        idx = currentWordIndex+i-pos;
+                        if (idx<0)idx=listlen+idx;
+                        if (idx>=listlen)idx=idx-listlen;
+                        ss = wordlist.get(idx).split("=");
+                    }
+                    for (int j=1;j<ss.length;j++)explanition+=ss[j];
+                    buttons[i].setText(explanition);
+                    buttons[i].setActionCommand(""+idx);
+                    buttons[i].setSelected(false);
                 }
-                for (int j=1;j<ss.length;j++)explanition+=ss[j];
-                buttons[i].setText(explanition);
-                buttons[i].setActionCommand(""+idx);
-                buttons[i].setSelected(false);
-            }
-            ImageIcon iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
-                                          + picNames[0]
-                                          + ".gif")));
-            picture.setIcon(iic);
-            int remain = wordlist.size()-finishlist.size();
-            progress.setText("还有"+remain+"个，共有"+wordlist.size()+"个");
-            }else{
-                    progress.setText("congratulations! all finished :)");
+                ImageIcon iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                              + picNames[0]
+                                              + ".gif")));
+                picture.setIcon(iic);
+                int remain = wordlist.size()-finishlist.size();
+                progress.setText("还有"+remain+"个，共有"+wordlist.size()+"个");
+            } else {
+                progress.setText("congratulations! all finished :)");
             }
         }
-        
-        private void doanimation(String typename){
-                count = 0; //freeze counter
-                String [] picnames = {};
-                String [] NG_group = {"NG0","NG1","NG2","NG0","NG2","NG1","NG0"};
-                String [] good_group = {"thumb0","thumb2","thumb4","thumb2","thumb0","thumb2","thumb4"};
-                if(typename.equals("NG")){
-                        picnames = new String[NG_group.length];
-                        System.arraycopy(NG_group,0,picnames,0,NG_group.length);
-                }
-                if(typename.equals("good")){
-                        picnames = new String[good_group.length];
-                        System.arraycopy(good_group,0,picnames,0,good_group.length);
-                }
-                
-                for(int i=0;i<picnames.length;i++){
-                        String s = picnames[i];
+
+        private void setButtonsEnable(boolean enable){
+                for (int i=0;i<buttons.length;i++) {
+                buttons[i].setEnabled(enable);
+            }
+        }
+        private void doanimation(String typename) {
+            setButtonsEnable(false);//avoid any click during animation
+
+            count = 0; //freeze counter
+            String [] picnames = {};
+            String [] NG_group = {"NG0","NG1","NG2","NG0","NG2","NG1","NG0"};
+            String [] good_group = {"thumb0","thumb2","thumb4","thumb2","thumb0","thumb2","thumb4"};
+            if (typename.equals("NG")) {
+                picnames = new String[NG_group.length];
+                System.arraycopy(NG_group,0,picnames,0,NG_group.length);
+            }
+            if (typename.equals("good")) {
+                picnames = new String[good_group.length];
+                System.arraycopy(good_group,0,picnames,0,good_group.length);
+            }
+
+            for (int i=0;i<picnames.length;i++) {
+                String s = picnames[i];
                 ImageIcon iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
-                                + s
-                                + ".gif")));
-                picture.setIcon(iic); 
+                                              + s
+                                              + ".gif")));
+                picture.setIcon(iic);
                 picture.setText("");
-                update(getGraphics());  
+                update(getGraphics());
                 try {
                     Thread.sleep(150);
                 } catch (InterruptedException ie) {
                     //Handle exception
-                }                
                 }
+            }
+            setButtonsEnable(true);//enable click after animation
         }
         /** Listens to the radio buttons. */
         public void actionPerformed(ActionEvent e) {
-            String selected = e.getActionCommand();
-            String current = ""+currentWordIndex;
-            String picName;
-            ImageIcon iic;
-            if (selected.equals(current)) {
-                Random rand = new Random();
-                picName = picNames[rand.nextInt(picNames.length-1)+1];
-                goodanswer = true;
-                doanimation("good");
-                if (trytimes==0) {
-                    finishlist.add(currentWordIndex);
+                //JRadioButton btn =(JRadioButton)e.getSource();
+                //if(!btn.isEnabled())return;
+                //--the action event is always buffered. So does not work!!!
+                long actionTimeMark = e.getWhen();
+                long timestamp = System.currentTimeMillis();
+                //System.out.println("e:"+e.getWhen()+"t:"+timestamp);
+                if(timestamp - actionTimeMark > 10)return;// avoid multi clicks in short time.
+                
+                String selected = e.getActionCommand();
+                String current = ""+currentWordIndex;
+                String picName;
+                ImageIcon iic;
+                if (selected.equals(current)) {
+                    Random rand = new Random();
+                    picName = picNames[rand.nextInt(picNames.length-1)+1];
+                    goodanswer = true;
+                    doanimation("good");
+                    if (trytimes==0) {
+                        finishlist.add(currentWordIndex);
+                    }
+                } else {
+                    doanimation("NG");
+                    picName = picNames[0];
+                    goodanswer = false;
+                    writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
+
+                    trytimes++;
+
                 }
-            } else {
-                doanimation("NG");
-                picName = picNames[0];
-                goodanswer = false;
-                writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
+                iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
+                                    + picName
+                                    + ".gif")));
+                picture.setIcon(iic);
+                picture.setText("?");
 
-                trytimes++;
-
-            }
-            iic = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
-                                + picName
-                                + ".gif")));
-            picture.setIcon(iic);
-            picture.setText("?");
-
-            if (trytimes==0) {
-                fillwords();//if success in 1st try, jump to next question
-            }
+                if (trytimes==0) {
+                    fillwords();//if success in 1st try, jump to next question
+                }
         }
 
 
@@ -256,7 +272,7 @@ public class VocaBuild extends JPanel
             //Display the window.
             frame.pack();
             frame.setVisible(true);
-            
+
 
         }
 
@@ -282,7 +298,7 @@ public class VocaBuild extends JPanel
         }
         private void readnewwordfile() {
             String line = null;
-            try (BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(newwordsfile)))){
+            try (BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(newwordsfile)))) {
                 while ((line = input.readLine()) != null) {
                     newwordlist.add(line);
                     //System.out.println(line);
@@ -293,7 +309,7 @@ public class VocaBuild extends JPanel
             }
         }
         private void writenewwordfile(String s) {
-            if(newwordlist.contains(s))return;
+            if (newwordlist.contains(s))return;
             Charset charset = Charset.forName("GB2312");
             try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                             new FileOutputStream(newwordsfile, true), "GB2312"))) {
