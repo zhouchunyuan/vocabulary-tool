@@ -110,7 +110,7 @@ public class VocaBuild extends JPanel
                             picture.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/"
                                                           + "questionfail"
                                                           + ".gif"))));
-                            writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
+                            writenewwordfile(wordlist.get(currentWordIndex));
                         }
                     }
                 }
@@ -229,7 +229,7 @@ public class VocaBuild extends JPanel
                     doanimation("NG");
                     picName = picNames[0];
                     goodanswer = false;
-                    writenewwordfile(wordlist.get(currentWordIndex)+"\r\n");
+                    writenewwordfile(wordlist.get(currentWordIndex));
 
                     trytimes++;
 
@@ -313,7 +313,10 @@ public class VocaBuild extends JPanel
             Charset charset = Charset.forName("GB2312");
             try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                             new FileOutputStream(newwordsfile, true), "GB2312"))) {
+                
                 writer.write(s, 0, s.length());
+                writer.newLine();//String sline = s + "\r\n";
+                
                 newwordlist.add(s);
             } catch (IOException x) {
                 System.err.format("IOException: %s%n", x);
